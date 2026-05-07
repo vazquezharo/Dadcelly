@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f7f0e5;
+  --paper-soft: #fbf7ef;
+  --ink: #101d2d;
+  --ink-muted: #4d5643;
+  --olive: #617147;
+  --olive-dark: #364226;
+  --gold: #b8a45e;
+  --border: #ded3c3;
+  --navy: #082037;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(184, 164, 94, 0.16), transparent 28rem),
+    linear-gradient(180deg, var(--paper-soft), var(--paper));
+  color: var(--ink);
+  font-family:
+    "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(97, 113, 71, 0.24);
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.font-script {
+  font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+}
+
+.paper-texture {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.42)),
+    radial-gradient(circle at 20% 20%, rgba(16, 29, 45, 0.05) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 40%, rgba(97, 113, 71, 0.06) 0 1px, transparent 1px);
+  background-size: auto, 24px 24px, 31px 31px;
+}
+
+.google-form-frame {
+  height: var(--google-form-mobile-height);
+}
+
+@media (min-width: 768px) {
+  .google-form-frame {
+    height: var(--google-form-desktop-height);
+  }
+}
