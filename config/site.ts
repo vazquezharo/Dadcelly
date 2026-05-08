@@ -16,7 +16,7 @@ export const siteConfig = {
     eyebrow: "A celebration of life for",
     name: "Harold",
     remembrance: "Forever in our hearts",
-    date: "August 8-10, 2026",
+    date: "August 7-9, 2026",
     location: "Wappingers Falls, New York",
     intro:
       "Join us as we celebrate the life of my dad through memories, stories, good food, and the places he loved.",
@@ -31,7 +31,7 @@ export const siteConfig = {
     title: "Weekend at a Glance",
     items: [
       {
-        day: "Friday, Aug 8",
+        day: "Friday, Aug 7",
         title: "Welcome Dinner",
         time: "6:00 PM",
         place: "21 Burgers",
@@ -40,7 +40,7 @@ export const siteConfig = {
         icon: "utensils",
       },
       {
-        day: "Saturday, Aug 9",
+        day: "Saturday, Aug 8",
         title: "Morning: Fishing & Picnic",
         time: "Morning (Optional)",
         place: "Private fishing spot",
@@ -50,7 +50,7 @@ export const siteConfig = {
         icon: "fish",
       },
       {
-        day: "Saturday, Aug 9",
+        day: "Saturday, Aug 8",
         title: "Afternoon: Free Time",
         time: "Afternoon (Optional)",
         place: "Explore, rest, or visit",
@@ -60,7 +60,7 @@ export const siteConfig = {
         icon: "trees",
       },
       {
-        day: "Saturday, Aug 9",
+        day: "Saturday, Aug 8",
         title: "Dinner & Slideshow",
         time: "6:00 PM",
         place: "Cafe Con Leche",
@@ -70,7 +70,7 @@ export const siteConfig = {
       },
     ],
     openDay: {
-      day: "Sunday, Aug 10",
+      day: "Sunday, Aug 9",
       title: "Open Day",
       description: "Plans are open. Let's enjoy some more time together.",
       icon: "sun",
@@ -95,7 +95,7 @@ export const siteConfig = {
     description:
       "Help us build a slideshow and preserve memories by sharing your favorite photos and videos.",
     buttonLabel: "Upload Here",
-    href: "https://photos.google.com/share/",
+    href: "https://photos.app.goo.gl/Xx7rF71mPYqD8KF9A",
     helperText: "Google Photos Album (View & Upload)",
   },
   travel: {
