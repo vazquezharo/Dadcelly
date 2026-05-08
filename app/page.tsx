@@ -18,7 +18,7 @@ import {
   Utensils,
   type LucideIcon,
 } from "lucide-react";
-import { siteConfig, type ScheduleIconName } from "@/config/site";
+import { siteConfig, type ScheduleIconName } from "../config/site";
 
 export const dynamic = "force-static";
 
