@@ -3,7 +3,6 @@ import type { CSSProperties } from "react";
 import {
   Bed,
   CalendarDays,
-  Coffee,
   ExternalLink,
   Fish,
   Heart,
@@ -16,6 +15,7 @@ import {
   Upload,
   UserRound,
   Utensils,
+  UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react";
 import { siteConfig, type ScheduleIconName } from "../config/site";
@@ -24,7 +24,7 @@ export const dynamic = "force-static";
 
 const iconMap = {
   bed: Bed,
-  coffee: Coffee,
+  dinner: UtensilsCrossed,
   fish: Fish,
   sun: Sun,
   trees: Trees,
@@ -73,7 +73,7 @@ function LinkButton({
   const external = isExternalHref(href);
   const variants = {
     light:
-      "bg-[var(--paper-soft)] text-[var(--olive-dark)] shadow-[0_10px_26px_rgba(0,0,0,0.12)] hover:bg-white",
+      "border border-[rgba(54,66,38,0.28)] bg-[var(--paper-soft)] text-[#26331b] shadow-[0_10px_26px_rgba(0,0,0,0.12)] hover:bg-white",
     olive:
       "bg-[var(--olive)] text-white shadow-[0_12px_28px_rgba(0,0,0,0.16)] hover:bg-[var(--olive-dark)]",
     outline:
@@ -171,17 +171,22 @@ function Hero() {
 }
 
 function Schedule() {
+  const scheduleItems = [
+    ...siteConfig.schedule.items,
+    siteConfig.schedule.openDay,
+  ] as const;
+
   return (
     <section
       className="paper-texture px-4 py-10 sm:px-6 sm:py-14"
       id="schedule"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <SectionHeading title={siteConfig.schedule.title} />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
-          {siteConfig.schedule.items.map((item) => (
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-0">
+          {scheduleItems.map((item) => (
             <article
-              className="rounded-md border border-[var(--border)] bg-white/40 px-6 py-7 text-center shadow-[0_12px_36px_rgba(67,53,36,0.06)] lg:rounded-none lg:border-y-0 lg:border-r-0 lg:border-l lg:bg-transparent lg:shadow-none lg:first:border-l-0"
+              className="rounded-md border border-[var(--border)] bg-white/40 px-5 py-7 text-center shadow-[0_12px_36px_rgba(67,53,36,0.06)] lg:rounded-none lg:border-y-0 lg:border-r-0 lg:border-l lg:bg-transparent lg:shadow-none lg:first:border-l-0"
               key={`${item.day}-${item.title}`}
             >
               <EventIcon
@@ -194,32 +199,19 @@ function Schedule() {
               <h3 className="mt-3 text-xl font-black leading-tight text-[var(--olive-dark)]">
                 {item.title}
               </h3>
-              <div className="mt-5 space-y-1 text-sm leading-6 text-[var(--ink)]">
-                <p className="font-bold">{item.time}</p>
-                <p className="font-black">{item.place}</p>
-                <p>{item.location}</p>
-              </div>
+              {"time" in item ? (
+                <div className="mt-5 space-y-1 text-sm leading-6 text-[var(--ink)]">
+                  <p className="font-bold">{item.time}</p>
+                  <p className="font-black">{item.place}</p>
+                  <p>{item.location}</p>
+                </div>
+              ) : null}
               <p className="mx-auto mt-4 max-w-60 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
                 {item.description}
               </p>
             </article>
           ))}
         </div>
-        <article className="mx-auto mt-9 max-w-xl text-center">
-          <EventIcon
-            className="mx-auto mb-3 size-9 text-[var(--olive-dark)]"
-            name={siteConfig.schedule.openDay.icon}
-          />
-          <p className="text-xs font-black uppercase tracking-[0.12em] text-[var(--ink)]">
-            {siteConfig.schedule.openDay.day}
-          </p>
-          <h3 className="mt-2 text-xl font-black text-[var(--olive-dark)]">
-            {siteConfig.schedule.openDay.title}
-          </h3>
-          <p className="mt-2 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
-            {siteConfig.schedule.openDay.description}
-          </p>
-        </article>
       </div>
     </section>
   );
