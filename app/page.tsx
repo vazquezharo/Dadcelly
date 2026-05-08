@@ -73,7 +73,7 @@ function LinkButton({
   const external = isExternalHref(href);
   const variants = {
     light:
-      "border border-[rgba(54,66,38,0.28)] bg-[var(--paper-soft)] text-[#26331b] shadow-[0_10px_26px_rgba(0,0,0,0.12)] hover:bg-white",
+      "border border-white/25 bg-[#5f6d42] text-white shadow-[0_10px_26px_rgba(0,0,0,0.18)] hover:bg-[#4e5b35]",
     olive:
       "bg-[var(--olive)] text-white shadow-[0_12px_28px_rgba(0,0,0,0.16)] hover:bg-[var(--olive-dark)]",
     outline:
@@ -117,9 +117,11 @@ function HeaderNav() {
 }
 
 function Hero() {
+  const [leftHeroImage, rightHeroImage] = siteConfig.hero.sideImages;
+
   return (
     <section
-      className="relative isolate flex min-h-[620px] items-center overflow-hidden px-4 pb-14 pt-24 text-center sm:min-h-[680px] sm:px-6"
+      className="relative isolate flex min-h-[720px] items-center overflow-hidden px-4 pb-12 pt-20 text-center sm:min-h-[720px] sm:px-6"
       id="home"
     >
       <Image
@@ -132,39 +134,63 @@ function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(247,240,229,0.72),rgba(247,240,229,0.58)_42%,rgba(247,240,229,0.32)_75%,rgba(247,240,229,0.88))]" />
       <HeaderNav />
-      <div className="mx-auto mt-8 max-w-4xl">
-        <p className="text-sm font-black uppercase tracking-[0.35em] text-[var(--ink)] sm:text-base">
-          {siteConfig.hero.eyebrow}
-        </p>
-        <h1 className="font-display mt-4 text-[clamp(5rem,20vw,10.5rem)] leading-[0.82] tracking-normal text-[var(--ink)]">
-          {siteConfig.hero.name}
-        </h1>
-        <p className="font-script mt-5 text-3xl leading-none text-[var(--ink)] sm:text-5xl">
-          {siteConfig.hero.remembrance}
-        </p>
-        <div className="mx-auto mt-8 flex max-w-xl items-center gap-4">
-          <div className="h-px flex-1 bg-[rgba(16,29,45,0.2)]" />
-          <Heart
-            aria-hidden="true"
-            className="size-5 fill-[var(--ink)] text-[var(--ink)]"
-            strokeWidth={1.8}
-          />
-          <div className="h-px flex-1 bg-[rgba(16,29,45,0.2)]" />
+      <div className="mx-auto mt-10 grid w-full max-w-7xl items-center gap-7 lg:grid-cols-[minmax(170px,290px)_minmax(0,1fr)_minmax(170px,290px)]">
+        <figure className="order-2 mx-auto w-full max-w-64 overflow-hidden rounded-[2px] bg-[var(--paper-soft)] p-1 shadow-[0_18px_42px_rgba(27,24,18,0.22)] sm:max-w-72 lg:order-1">
+          <div className="relative aspect-[4/5.2] overflow-hidden">
+            <Image
+              alt={leftHeroImage.alt}
+              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 290px, 45vw"
+              src={leftHeroImage.src}
+            />
+          </div>
+        </figure>
+        <div className="order-1 mx-auto max-w-4xl lg:order-2">
+          <p className="text-sm font-black uppercase tracking-[0.35em] text-[var(--ink)] sm:text-base">
+            {siteConfig.hero.eyebrow}
+          </p>
+          <h1 className="font-display mt-4 text-[clamp(5rem,17vw,9.8rem)] leading-[0.82] tracking-normal text-[var(--ink)]">
+            {siteConfig.hero.name}
+          </h1>
+          <p className="font-script mt-5 text-3xl leading-none text-[var(--ink)] sm:text-5xl">
+            {siteConfig.hero.remembrance}
+          </p>
+          <div className="mx-auto mt-8 flex max-w-xl items-center gap-4">
+            <div className="h-px flex-1 bg-[rgba(16,29,45,0.2)]" />
+            <Heart
+              aria-hidden="true"
+              className="size-5 fill-[var(--ink)] text-[var(--ink)]"
+              strokeWidth={1.8}
+            />
+            <div className="h-px flex-1 bg-[rgba(16,29,45,0.2)]" />
+          </div>
+          <div className="mt-7 flex flex-col items-center justify-center gap-4 text-sm font-black uppercase tracking-[0.04em] text-[var(--ink)] sm:flex-row sm:gap-6 sm:text-base">
+            <span className="inline-flex items-center gap-2">
+              <CalendarDays aria-hidden="true" className="size-5" />
+              {siteConfig.hero.date}
+            </span>
+            <span className="hidden h-7 w-px bg-[rgba(16,29,45,0.25)] sm:block" />
+            <span className="inline-flex items-center gap-2">
+              <MapPin aria-hidden="true" className="size-5" />
+              {siteConfig.hero.location}
+            </span>
+          </div>
+          <p className="mx-auto mt-9 max-w-xl text-balance text-base leading-8 text-[var(--ink)] sm:text-lg">
+            {siteConfig.hero.intro}
+          </p>
         </div>
-        <div className="mt-7 flex flex-col items-center justify-center gap-4 text-sm font-black uppercase tracking-[0.04em] text-[var(--ink)] sm:flex-row sm:gap-6 sm:text-base">
-          <span className="inline-flex items-center gap-2">
-            <CalendarDays aria-hidden="true" className="size-5" />
-            {siteConfig.hero.date}
-          </span>
-          <span className="hidden h-7 w-px bg-[rgba(16,29,45,0.25)] sm:block" />
-          <span className="inline-flex items-center gap-2">
-            <MapPin aria-hidden="true" className="size-5" />
-            {siteConfig.hero.location}
-          </span>
-        </div>
-        <p className="mx-auto mt-9 max-w-xl text-balance text-base leading-8 text-[var(--ink)] sm:text-lg">
-          {siteConfig.hero.intro}
-        </p>
+        <figure className="order-3 mx-auto w-full max-w-64 overflow-hidden rounded-[2px] bg-[var(--paper-soft)] p-1 shadow-[0_18px_42px_rgba(27,24,18,0.22)] sm:max-w-72">
+          <div className="relative aspect-[4/5.2] overflow-hidden">
+            <Image
+              alt={rightHeroImage.alt}
+              className={`object-cover ${rightHeroImage.imageClassName ?? ""}`}
+              fill
+              sizes="(min-width: 1024px) 290px, 45vw"
+              src={rightHeroImage.src}
+            />
+          </div>
+        </figure>
       </div>
     </section>
   );
@@ -201,14 +227,16 @@ function Schedule() {
               </h3>
               {"time" in item ? (
                 <div className="mt-5 space-y-1 text-sm leading-6 text-[var(--ink)]">
-                  <p className="font-bold">{item.time}</p>
-                  <p className="font-black">{item.place}</p>
-                  <p>{item.location}</p>
+                  {item.time ? <p className="font-bold">{item.time}</p> : null}
+                  {item.place ? <p className="font-black">{item.place}</p> : null}
+                  {item.location ? <p>{item.location}</p> : null}
                 </div>
               ) : null}
-              <p className="mx-auto mt-4 max-w-60 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
-                {item.description}
-              </p>
+              {item.description ? (
+                <p className="mx-auto mt-4 max-w-60 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
+                  {item.description}
+                </p>
+              ) : null}
             </article>
           ))}
         </div>

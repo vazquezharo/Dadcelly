@@ -26,6 +26,17 @@ export const siteConfig = {
       label: "Bill Chomik on Unsplash",
       href: "https://unsplash.com/photos/two-fishing-rods-on-a-wooden-dock-by-a-lake-YZ4gx7yxx6g",
     },
+    sideImages: [
+      {
+        src: "/images/harold-rock.jpg",
+        alt: "Harold standing on rocks with his arms raised by a stream",
+      },
+      {
+        src: "/images/harold-deck.jpg",
+        alt: "Harold holding fishing rods on a deck",
+        imageClassName: "hero-side-image-rotate",
+      },
+    ],
   },
   schedule: {
     title: "Weekend at a Glance",
@@ -35,7 +46,7 @@ export const siteConfig = {
         title: "Welcome Dinner",
         time: "6:00 PM",
         place: "21 Burgers",
-        location: "Wappingers Falls, NY",
+        location: "2026 NY-9D, Wappingers Falls, NY 12590",
         description: "Casual get-together for anyone in town Friday night.",
         icon: "utensils",
       },
@@ -43,20 +54,19 @@ export const siteConfig = {
         day: "Saturday, Aug 8",
         title: "Morning: Fishing & Picnic",
         time: "Morning (Optional)",
-        place: "Private fishing spot",
-        location: "By the water",
+        place: "Vinny's Lakehouse",
+        location: "1768 South Rd, Wappingers Falls, NY 12590",
         description:
           "Fishing at a private spot he loved. Picnic breakfast and relaxing by the water for anyone who prefers to hang out.",
         icon: "fish",
       },
       {
         day: "Saturday, Aug 8",
-        title: "Afternoon: Free Time",
-        time: "Afternoon (Optional)",
-        place: "Explore, rest, or visit",
-        location: "Around town",
-        description:
-          "Time to relax, explore, visit a winery, enjoy the pool, or hang out at the hotel.",
+        title: "Afternoon: Activity TBD",
+        time: "",
+        place: "",
+        location: "",
+        description: "",
         icon: "trees",
       },
       {
@@ -64,7 +74,7 @@ export const siteConfig = {
         title: "Dinner & Slideshow",
         time: "6:00 PM",
         place: "Cafe Con Leche",
-        location: "Wappingers Falls, NY",
+        location: "2710 W Main St a, Wappingers Falls, NY 12590",
         description: "Dinner together and a slideshow of memories.",
         icon: "dinner",
       },
@@ -112,8 +122,8 @@ export const siteConfig = {
     title: "Reach Out To Me",
     description:
       "If you have any questions or need help with anything, just reach out. I'm happy to help.",
-    phone: "(845) 123-4567",
-    phoneHref: "tel:+18451234567",
+    phone: "201-396-0574",
+    phoneHref: "tel:+12013960574",
     textLabel: "Text or Call Anytime",
     photo: {
       src: "/images/harold-fishing.jpg",
