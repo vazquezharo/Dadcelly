@@ -197,49 +197,38 @@ function Hero() {
 }
 
 function Schedule() {
-  const scheduleItems = [
-    ...siteConfig.schedule.items,
-    siteConfig.schedule.openDay,
-  ] as const;
-
   return (
     <section
       className="paper-texture px-4 py-10 sm:px-6 sm:py-14"
       id="schedule"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-5xl">
         <SectionHeading title={siteConfig.schedule.title} />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-0">
-          {scheduleItems.map((item) => (
-            <article
-              className="rounded-md border border-[var(--border)] bg-white/40 px-5 py-7 text-center shadow-[0_12px_36px_rgba(67,53,36,0.06)] lg:rounded-none lg:border-y-0 lg:border-r-0 lg:border-l lg:bg-transparent lg:shadow-none lg:first:border-l-0"
-              key={`${item.day}-${item.title}`}
-            >
-              <EventIcon
-                className="mx-auto mb-5 size-12 text-[var(--olive-dark)] sm:size-14"
-                name={item.icon}
-              />
-              <p className="text-xs font-black uppercase tracking-[0.12em] text-[var(--ink)]">
-                {item.day}
-              </p>
-              <h3 className="mt-3 text-xl font-black leading-tight text-[var(--olive-dark)]">
-                {item.title}
-              </h3>
-              {"time" in item ? (
-                <div className="mt-5 space-y-1 text-sm leading-6 text-[var(--ink)]">
-                  {item.time ? <p className="font-bold">{item.time}</p> : null}
-                  {item.place ? <p className="font-black">{item.place}</p> : null}
-                  {item.location ? <p>{item.location}</p> : null}
-                </div>
-              ) : null}
-              {item.description ? (
-                <p className="mx-auto mt-4 max-w-60 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
-                  {item.description}
+        <article className="rounded-lg border border-[var(--border)] bg-white/40 px-6 py-8 text-center shadow-[0_16px_46px_rgba(67,53,36,0.07)] sm:px-10">
+          <CalendarDays
+            aria-hidden="true"
+            className="mx-auto size-11 text-[var(--olive-dark)]"
+            strokeWidth={1.7}
+          />
+          <p className="mx-auto mt-5 max-w-3xl text-balance text-lg leading-8 text-[rgba(16,29,45,0.82)]">
+            {siteConfig.schedule.description}
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {siteConfig.schedule.highlights.map((highlight) => (
+              <div
+                className="rounded-md border border-[var(--border)] bg-[rgba(251,247,239,0.68)] px-5 py-5"
+                key={highlight.label}
+              >
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[var(--ink)]">
+                  {highlight.label}
                 </p>
-              ) : null}
-            </article>
-          ))}
-        </div>
+                <p className="mt-3 text-base font-black leading-6 text-[var(--olive-dark)]">
+                  {highlight.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </article>
       </div>
     </section>
   );

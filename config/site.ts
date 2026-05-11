@@ -39,52 +39,23 @@ export const siteConfig = {
     ],
   },
   schedule: {
-    title: "Weekend at a Glance",
-    items: [
+    title: "Weekend Itinerary",
+    description:
+      "The weekend itinerary is still being finalized. For now, please use this site to RSVP, find hotel information, and upload photos or videos for the family. Activities, meals, and gathering details will be added closer to the celebration weekend.",
+    highlights: [
       {
-        day: "Friday, Aug 7",
-        title: "Welcome Dinner",
-        time: "6:00 PM",
-        place: "21 Burgers",
-        location: "2026 NY-9D, Wappingers Falls, NY 12590",
-        description: "Casual get-together for anyone in town Friday night.",
-        icon: "utensils",
+        label: "Celebration Weekend",
+        value: "August 7-9, 2026",
       },
       {
-        day: "Saturday, Aug 8",
-        title: "Morning: Fishing & Picnic",
-        time: "Morning (Optional)",
-        place: "Vinny's Lakehouse",
-        location: "1768 South Rd, Wappingers Falls, NY 12590",
-        description:
-          "Fishing at a private spot he loved. Picnic breakfast and relaxing by the water for anyone who prefers to hang out.",
-        icon: "fish",
+        label: "Location",
+        value: "Wappingers Falls, New York",
       },
       {
-        day: "Saturday, Aug 8",
-        title: "Afternoon: Activity TBD",
-        time: "",
-        place: "",
-        location: "",
-        description: "",
-        icon: "trees",
-      },
-      {
-        day: "Saturday, Aug 8",
-        title: "Dinner & Slideshow",
-        time: "6:00 PM",
-        place: "Cafe Con Leche",
-        location: "2710 W Main St a, Wappingers Falls, NY 12590",
-        description: "Dinner together and a slideshow of memories.",
-        icon: "dinner",
+        label: "Details",
+        value: "Activities and dinner plans will be shared as we get closer.",
       },
     ],
-    openDay: {
-      day: "Sunday, Aug 9",
-      title: "Open Day",
-      description: "Plans are open. Let's enjoy some more time together.",
-      icon: "sun",
-    },
   },
   rsvp: {
     id: "rsvp",
@@ -193,6 +164,9 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 export type ScheduleIconName =
-  | (typeof siteConfig.schedule.items)[number]["icon"]
-  | typeof siteConfig.schedule.openDay.icon
+  | "dinner"
+  | "fish"
+  | "sun"
+  | "trees"
+  | "utensils"
   | typeof siteConfig.travel.icon;
