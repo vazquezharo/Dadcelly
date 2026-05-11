@@ -52,7 +52,7 @@ export const siteConfig = {
       },
       {
         day: "Saturday, Aug 8",
-        title: "Morning: Fishing & Breakfast",
+        title: "Morning: Fishing & Picnic",
         time: "Morning (Optional)",
         place: "Vinny's Lakehouse",
         location: "1768 South Rd, Wappingers Falls, NY 12590",
@@ -71,11 +71,11 @@ export const siteConfig = {
       },
       {
         day: "Saturday, Aug 8",
-        title: "Dinner",
+        title: "Dinner & Slideshow",
         time: "6:00 PM",
         place: "Cafe Con Leche",
         location: "2710 W Main St a, Wappingers Falls, NY 12590",
-        description: "Dinner together at Harold's favorite Restaurant.",
+        description: "Dinner together and a slideshow of memories.",
         icon: "dinner",
       },
     ],
@@ -105,8 +105,8 @@ export const siteConfig = {
     description:
       "Help us build a slideshow and preserve memories by sharing your favorite photos and videos.",
     buttonLabel: "Upload Here",
-    href: "https://photos.app.goo.gl/Xx7rF71mPYqD8KF9A",
-    helperText: "Google Photos Album (View & Upload)",
+    href: "https://www.dropbox.com/request/dx1aao9b1uerijrobois",
+    helperText: "Dropbox File Request (Upload Photos & Videos)",
   },
   travel: {
     id: "travel",
