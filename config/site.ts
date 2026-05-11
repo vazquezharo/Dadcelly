@@ -112,10 +112,43 @@ export const siteConfig = {
     id: "travel",
     title: "Travel & Stay",
     description:
-      "Hotel block and travel information coming soon. Check back here for updates.",
-    buttonLabel: "View Travel Info",
-    href: "#travel",
+      "Here are a few nearby hotel options for guests staying August 7-9, 2026. Rates can change, so please confirm pricing and availability when booking.",
     icon: "bed",
+    hotels: [
+      {
+        name: "Spark by Hilton Fishkill",
+        address: "20 Schuyler Blvd, Fishkill, NY 12524",
+        rate: "Approximately $120-$170/night",
+        distance: "About 10 minutes to Wappingers Falls",
+        description:
+          "A simple, budget-friendly option close to restaurants, shopping, and I-84. Good choice for guests looking for convenience and affordability.",
+        bookingLabel: "Book Aug 7-9",
+        bookingHref:
+          "https://www.hilton.com/en/hotels/swfbdpe-spark-fishkill/",
+      },
+      {
+        name: "Hyatt Place Poughkeepsie",
+        address: "2165 South Rd, Poughkeepsie, NY 12601",
+        rate: "Approximately $170-$250/night",
+        distance: "About 6 minutes to Wappingers Falls",
+        description:
+          "Modern hotel with spacious rooms, free parking, and easy access to the Hudson Valley area. Good option for families or guests staying multiple nights.",
+        bookingLabel: "Book Aug 7-9",
+        bookingHref:
+          "https://www.hyatt.com/hyatt-place/en-US/swfzp-hyatt-place-poughkeepsie-hudson-valley",
+      },
+      {
+        name: "Courtyard by Marriott Poughkeepsie",
+        address: "2641 South Rd / Route 9, Poughkeepsie, NY 12601",
+        rate: "Approximately $180-$260/night",
+        distance: "About 10 minutes to Wappingers Falls",
+        description:
+          "Comfortable full-service hotel with on-site dining and updated rooms. Convenient for guests wanting a more traditional Marriott-style stay.",
+        bookingLabel: "Book Aug 7-9",
+        bookingHref:
+          "https://www.marriott.com/en-us/hotels/pouch-courtyard-poughkeepsie/overview/",
+      },
+    ],
   },
   contact: {
     id: "contact",

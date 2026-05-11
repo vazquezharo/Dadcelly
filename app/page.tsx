@@ -324,7 +324,7 @@ function ActionCards() {
 function InfoCards() {
   return (
     <section className="px-4 pb-10 sm:px-6" id={siteConfig.travel.id}>
-      <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.9fr_1.4fr]">
+      <div className="mx-auto grid max-w-6xl gap-5">
         <article className="rounded-lg border border-[var(--border)] bg-white/40 px-6 py-8 shadow-[0_16px_46px_rgba(67,53,36,0.07)] sm:px-10">
           <div className="flex items-start gap-5">
             <EventIcon
@@ -338,14 +338,36 @@ function InfoCards() {
               <p className="mt-5 max-w-md leading-7 text-[rgba(16,29,45,0.82)]">
                 {siteConfig.travel.description}
               </p>
-              <div className="mt-8">
-                <LinkButton
-                  href={siteConfig.travel.href}
-                  label={siteConfig.travel.buttonLabel}
-                  variant="outline"
-                />
-              </div>
             </div>
+          </div>
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {siteConfig.travel.hotels.map((hotel) => (
+              <article
+                className="flex h-full flex-col rounded-md border border-[var(--border)] bg-[rgba(251,247,239,0.68)] p-5 text-left"
+                key={hotel.name}
+              >
+                <h3 className="text-lg font-black leading-tight text-[var(--olive-dark)]">
+                  {hotel.name}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-[rgba(16,29,45,0.82)]">
+                  {hotel.address}
+                </p>
+                <div className="mt-4 space-y-2 text-sm font-bold text-[var(--ink)]">
+                  <p>{hotel.rate}</p>
+                  <p>{hotel.distance}</p>
+                </div>
+                <p className="mt-4 flex-1 text-sm leading-6 text-[rgba(16,29,45,0.78)]">
+                  {hotel.description}
+                </p>
+                <div className="mt-6">
+                  <LinkButton
+                    href={hotel.bookingHref}
+                    label={hotel.bookingLabel}
+                    variant="outline"
+                  />
+                </div>
+              </article>
+            ))}
           </div>
         </article>
         <article
